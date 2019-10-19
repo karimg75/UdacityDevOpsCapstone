@@ -12,7 +12,7 @@ pipeline {
     }
     stage('2nd Stage: Lint HTML') {
       steps {
-        sh 'tidy -q -e green/ws/index.html'
+        //sh 'tidy -q -e green/ws/index.html'
       }
     }
     stage('3rd Stage: Upload to AWS') {
