@@ -19,7 +19,7 @@ pipeline {
 
     stage('2: Git Clone') {
       steps {
-        git 'https://github.com/karimg75/UdacityDevOpsCapstone'
+        git 'https://github.com/karimg75/UdacityDevOpsCapstone.git'
       }
     }
 
@@ -39,22 +39,3 @@ pipeline {
 
   }
 }
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-
-
-
-
