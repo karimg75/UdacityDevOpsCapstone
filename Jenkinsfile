@@ -1,4 +1,9 @@
 pipeline {
+  environment {
+    registry = "karimg75/testgreenimage"
+    registryCredential = 'docker'
+    dockerImage = ''
+  }
   agent any
   stages {
 
@@ -24,12 +29,11 @@ pipeline {
       }
     }
 
-    stage('4:  Docker Image') {
+    stage('4: Docker Image') {
       steps {
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
-
       }
     }
 
