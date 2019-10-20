@@ -6,7 +6,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerpath=testgreenimage
+dockerpath=karimg75/testgreenimage
 
 # Step 2:  
 # Authenticate & tag

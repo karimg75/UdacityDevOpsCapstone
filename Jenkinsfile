@@ -1,7 +1,8 @@
 pipeline {
   agent any
   stages {
-    stage('1st Stage: Say Hello - Build init ') {
+
+    stage('1: Say Hello - Build init ') {
       steps {
         sh 'echo "Hello World "'
         sh '''
@@ -10,18 +11,30 @@ pipeline {
                 '''
       }
     }
-    stage('2nd Stage: Lint HTML') {
-      steps {
-        sh 'tidy -q -e green/ws/index.html'
-      }
-    }
-    stage('3rd Stage: Upload to AWS') {
-      steps {
-        withAWS(region: 'us-west-2', credentials: 'aws-static') {
-          s3Upload(bucket: 'jenkins-karim', file: 'green/ws/')
-        }
 
+    stage('2: Git Clone') {
+      steps {
+        git 'https://github.com/karimg75/UdacityDevOpsCapstone'
       }
     }
+
   }
 }
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+
+
