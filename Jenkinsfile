@@ -18,6 +18,13 @@ pipeline {
       }
     }
 
+    stage('3: Lint HTML') {
+      steps {
+        sh 'tidy -q -e green/ws/index.html'
+      }
+    }
+
+
   }
 }
 
