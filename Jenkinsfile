@@ -14,7 +14,7 @@ pipeline {
     stage('3rd Stage: Upload to AWS') {
       steps {
         withAWS(region: 'us-west-2', credentials: 'aws-static') {
-          s3Upload(bucket: 'jenkins-karim', file: 'green/ws/*')
+          s3Upload(bucket: 'jenkins-karim', file: 'green/ws/')
         }
 
       }
