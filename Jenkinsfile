@@ -32,7 +32,8 @@ pipeline {
     stage('4: Docker Image') {
       steps {
         script {
-          dockerImage = SUDO docker.build registry + ":$BUILD_NUMBER"
+		
+          SUDO dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
