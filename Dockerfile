@@ -1,7 +1,7 @@
 FROM nginx
 
 ## Step 1:
-RUN rm /usr/share/nginx/html/ws/index.html
+RUN rm -r /usr/share/nginx/html/ws
 
 ## Step 2:
 # Copy source code to working directory
