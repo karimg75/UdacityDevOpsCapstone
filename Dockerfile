@@ -5,5 +5,5 @@ FROM nginx
 
 ## Step 2:
 # Copy source code to working directory
-# COPY index.html /usr/share/nginx/html
- COPY ws /green/ws
+COPY index.html /usr/share/nginx/html
+#COPY index.html /green/ws
