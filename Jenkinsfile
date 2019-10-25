@@ -54,7 +54,7 @@ pipeline {
      stage('7: Context') {
       steps {
         withAWS(credentials: 'aws-static', region: 'us-west-2') {
-	  sh 'awsaws eks --region us-west-2 update-kubeconfig --name app'
+	  sh 'aws eks --region us-west-2 update-kubeconfig --name app'
         }
 
       }
