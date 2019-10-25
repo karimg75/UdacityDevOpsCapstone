@@ -56,7 +56,7 @@ pipeline {
       steps {
         withAWS(credentials: 'aws-static', region: 'us-west-2') {
           echo 'Success'
-          sh 'kubectl config use-context arn:aws:cloudformation:us-west-2:523856192541:stack/eksctl-app-nodegroup-udacity-karim'
+          sh 'kubectl config use-context jenkins@eksctl-app-nodegroup-udacity-karim'
           sh 'kubectl apply -f ./green-controller.json'
         }
 
