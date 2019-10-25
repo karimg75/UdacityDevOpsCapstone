@@ -56,7 +56,7 @@ pipeline {
       steps {
         withAWS(credentials: 'aws-static', region: 'us-west-2') {
           echo 'Success'
-          sh 'kubectl config use-context arn:aws:eks:us-west-2:523856192541:cluster/prod'
+          sh 'kubectl config use-context arn:aws:eks:us-west-2:523856192541:cluster/app'
           sh 'kubectl apply -f ./green-controller.json'
         }
 
