@@ -51,8 +51,15 @@ pipeline {
          sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-	
-     stage('7: Apply kube') {
+     stage('7: Context') {
+      steps {
+        withAWS(credentials: 'aws-static', region: 'us-west-2') {
+	  sh 'awsaws eks --region us-west-2 update-kubeconfig --name app'
+        }
+
+      }
+    }
+  stage('8: Apply kube') {
       steps {
         withAWS(credentials: 'aws-static', region: 'us-west-2') {
           echo 'Success'
